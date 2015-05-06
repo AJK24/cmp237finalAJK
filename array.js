@@ -22,7 +22,26 @@ function lowEnough(){
 }
 
 
+function filter(array, test) {
+	  var passed = [];
+	    for (var i = 0; i < array.length; i++) {
+		        if (test(array[i]))
+				      passed.push(array[i]);
+			  }
+	      return passed;
+}
 
-var filtered = weightclass.filter(lowEnough);
+// This finds people who were under the 200 pound weight class
+console.log(JSON.stringify(filter(weightclass, function(item) {
+   return item.weight < 200 ;
+})));
 
-console.log(filtered);
+
+
+
+
+
+
+//var filtered = weightclass.filter(lowEnough);
+
+//console.log(filtered);
